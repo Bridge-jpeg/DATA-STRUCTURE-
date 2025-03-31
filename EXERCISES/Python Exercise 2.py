@@ -1,18 +1,20 @@
-user = input("Please enter your words: ").strip().lower
-inp = 1
+user = input("Please enter your words: ")
 userWords = []
-userWords.append(user)
+isNotDupli = []
+userWords.append(user.lower())
 
-while inp != 0:
-    user = input("Please enter your words: ").strip().lower
-    userWords.append(user)
-    
-    emptyList = len(userWords) = 0
-    
-    if (user == ""):
-        inp = 0
-    else: 
-        inp = 1
+while user != "":
+    user = input("Please enter your words: ")
+    userWords.append(user.lower())
 
-print("Your words are: ")      
-if 
+for word in userWords:
+    if word.strip() not in isNotDupli:
+        isNotDupli.append(word.strip())
+
+isNotDupli.pop()
+print(f'Your words are: ', *isNotDupli, sep = "\n")
+
+# references:
+# sep()
+# not
+# * 
