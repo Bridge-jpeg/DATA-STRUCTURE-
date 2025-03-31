@@ -2,7 +2,7 @@
 def taxiCompute(timeTrav, distance):
     baseFare = 40
     totalFare = baseFare + (timeTrav * 2 + distance * 13.50)
-    print(f'Your total Fare for the ride is {"\u20B1"}{totalFare}.')
+    print(f'Your total fare for the ride is {"\u20B1"}{totalFare}.')
 
 Pass = 1
 while Pass != 0:
