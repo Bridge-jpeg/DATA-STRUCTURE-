@@ -29,5 +29,7 @@ def check_password(user_password):
 user_password = input("Please enter your desired password to check: ")
 check_password(user_password)
 
-
-
+#https://www.geeksforgeeks.org/what-is-a-modulo-operator-in-python/
+#https://www.geeksforgeeks.org/python-program-to-check-if-lowercase-letters-exist-in-a-string/
+#https://www.geeksforgeeks.org/python-check-if-given-string-is-numeric-or-not/
+#https://www.w3schools.com/python/ref_string_isdigit.asp
