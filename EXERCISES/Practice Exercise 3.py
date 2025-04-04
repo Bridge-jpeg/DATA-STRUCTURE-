@@ -9,17 +9,14 @@ print(f'Your item number is {item_number}.')
 
 def check_password(user_password):
     Pass_Value = False
-    if len(user_password) >= 8:
-        has_lowercase = any(char.islower() for char in user_password)
-        has_uppercase = any(char.isupper() for char in user_password)
-        if has_lowercase and has_uppercase == True:
-            for char in user_password:
-                if char.isdigit():
-                    Pass_Value = True
-        else:
-            Pass_Value = False
-    else:
-        Pass_Value = False
+    valid_length = len(user_password) >= 8
+    has_lowercase = any(char.islower() for char in user_password)
+    has_uppercase = any(char.isupper() for char in user_password)
+    
+    if has_lowercase and has_uppercase and valid_length == True:
+        for char in user_password:
+            if char.isdigit():
+                Pass_Value = True
 
     if Pass_Value == True:
         print("Your Password is Good.")
