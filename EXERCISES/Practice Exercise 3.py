@@ -12,11 +12,11 @@ def check_password(user_password):
     valid_length = len(user_password) >= 8
     has_lowercase = any(char.islower() for char in user_password)
     has_uppercase = any(char.isupper() for char in user_password)
+    has_digit = any(char.isdigit() for char in user_password)
+    is_valid_password = has_lowercase and has_uppercase and has_digit and valid_length == True
     
-    if has_lowercase and has_uppercase and valid_length == True:
-        for char in user_password:
-            if char.isdigit():
-                Pass_Value = True
+    if is_valid_password:
+        Pass_Value = True
 
     if Pass_Value == True:
         print("Your Password is Good.")
