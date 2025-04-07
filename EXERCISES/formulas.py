@@ -1,27 +1,38 @@
 def sample_median(given_data):
     i = 1
     data_list = []
+    int_data_list = []
     while True:
-        if given_data != 69:
-            given_data = int(input("num: "))
+        if given_data != "":
+            given_data = input("num: ")
             data_list.append(given_data)
 
         else:
             break
     data_list.pop(-1)
-    data_list.sort()
-    if len(data_list) & 2 == 0:
+    for item in data_list:
+        int_data_list.append(int(item))
+    int_data_list.sort()
+    middle_median = int(len(int_data_list)/2)
+    value_of_numbers = len(int_data_list) & 2 == 0 #ayaw gumana ng even and odd veryfier
+    if value_of_numbers:
+        print(value_of_numbers)
         print("even")
-        print(data_list)
-        middle_median = int(len(data_list)/2)
-        median1 = data_list[middle_median - 1]
-        median2 = data_list[middle_median]
-        median = (median1 + median2)/2
-        # median = ((data_list.index(middle_median - 1) + data_list.index(middle_median + 2)))/2
-        print(middle_median)
-        print(median)
+        print(int_data_list)
+        even_median1 = int_data_list[middle_median - 1]
+        even_median2 = int_data_list[middle_median]
+        even_median = (even_median1 + even_median2)/2
+        # print(middle_median)
+        print(f'Median: {even_median}')
     else: 
+        print(value_of_numbers)
+        odd_median_index = int(middle_median + 1/2)
         print("odd")
+        print(int_data_list)
+        odd_median = int_data_list[odd_median_index]
+        print(f'Median: {odd_median}')
+
+# def sample_mean(given_data):
 
    
 
