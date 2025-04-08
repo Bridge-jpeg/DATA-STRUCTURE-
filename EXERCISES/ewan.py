@@ -13,11 +13,11 @@ while True:
     else:
         break
 data_list.sort()
-
-
 for item in data_list:
     int_data_list.append(int(item))
 ls = [type(item) for item in int_data_list]
 print(ls)
 
 print(sum(int_data_list))
+
+print(6**2)
