@@ -17,7 +17,7 @@ def sample_mean(int_data_list, n_terms):
     sum_of_data = sum(int_data_list)
     global mean
     mean = (sum_of_data)/n_terms
-    print(f'Mean: {mean}')
+    print(f'Mean: {round(mean, 4)}')
 
 def trimmed_mean(trimmed_input, int_data_list, n_terms):
     trimmed_decimal = trimmed_input/100
@@ -32,7 +32,7 @@ def sample_range(int_data_list):
     sample_range = abs(int_data_list[0] - int_data_list[-1])
     print(f'Range: {sample_range}')
 
-def sample_variance_and_standard_deviation(int_data_list, n_terms, mean):
+def sample_variance_and_standard_deviation(int_data_list, n_terms):
     variance_n_terms = n_terms - 1
     variance_sum_list = []
     for value in int_data_list:
@@ -50,17 +50,21 @@ def stem_and_leaf(int_data_list):
     print()
     pass
 
-data_list = []
+data_list = [2.0, 3.0, 0.3, 3.3, 1.3, 0.4,
+ 0.2, 6.0, 5.5, 6.5, 0.2, 2.3,
+ 1.5, 4.0, 5.9, 1.8, 4.7, 0.7,
+ 4.5, 0.3, 1.5, 0.5, 2.5, 5.0,
+ 1.0, 6.0, 5.6, 6.0, 1.2, 0.2]
 int_data_list = []
 print("Input the all the given data and leave blank at the end.")
-while True:
-    given_data = input("Given: ")
-    if given_data != "":
-        data_list.append(given_data)
-    else:
-        break
+# while True:
+#     given_data = input("Given: ")
+#     if given_data != "":
+#         data_list.append(given_data)
+#     else:
+#         break
 for item in data_list:
-    int_data_list.append(int(item))
+    int_data_list.append(float(item))
 int_data_list.sort()
 n_terms = len(int_data_list)
 trimmed_input = float(input("Input trim: "))
