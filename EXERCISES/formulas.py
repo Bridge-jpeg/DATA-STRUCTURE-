@@ -32,9 +32,8 @@ def sample_range(int_data_list):
     sample_range = abs(int_data_list[0] - int_data_list[-1])
     print(f'Range: {sample_range}')
 
-def sample_variance_and_standard_deviation(int_data_list, n_terms):
+def sample_variance_and_standard_deviation(int_data_list, n_terms, mean):
     variance_n_terms = n_terms - 1
-    variance_mean = mean
     variance_sum_list = []
     for value in int_data_list:
         sum_numerator = (value - mean)**2
@@ -44,6 +43,12 @@ def sample_variance_and_standard_deviation(int_data_list, n_terms):
     standard_deviation = round((variance)**(0.5), 4)
     print(f'Sample Variance: {variance}')
     print(f'Standard Deviation: {standard_deviation}')
+
+def stem_and_leaf(int_data_list):
+    stem = [0.1, 0.2, 1.0, 1.2, 2.0, 2.2]
+    leaf = []
+    print()
+    pass
 
 data_list = []
 int_data_list = []
