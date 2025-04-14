@@ -50,19 +50,15 @@ def stem_and_leaf(int_data_list):
     print()
     pass
 
-data_list = [2.0, 3.0, 0.3, 3.3, 1.3, 0.4,
- 0.2, 6.0, 5.5, 6.5, 0.2, 2.3,
- 1.5, 4.0, 5.9, 1.8, 4.7, 0.7,
- 4.5, 0.3, 1.5, 0.5, 2.5, 5.0,
- 1.0, 6.0, 5.6, 6.0, 1.2, 0.2]
+data_list = []
 int_data_list = []
 print("Input the all the given data and leave blank at the end.")
-# while True:
-#     given_data = input("Given: ")
-#     if given_data != "":
-#         data_list.append(given_data)
-#     else:
-#         break
+while True:
+    given_data = input("Given: ")
+    if given_data != "":
+        data_list.append(given_data)
+    else:
+        break
 for item in data_list:
     int_data_list.append(float(item))
 int_data_list.sort()
