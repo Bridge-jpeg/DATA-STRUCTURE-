@@ -30,3 +30,23 @@ check_password(user_password)
 #https://www.geeksforgeeks.org/python-program-to-check-if-lowercase-letters-exist-in-a-string/
 #https://www.geeksforgeeks.org/python-check-if-given-string-is-numeric-or-not/
 #https://www.w3schools.com/python/ref_string_isdigit.asp
+
+# ITEM 0: Body Mass Index (BMI) 
+
+
+
+# ITEM 1: Average 
+Average_list = []
+while True:
+    num = int(input("Please input the numbers:"))
+    if num == 0:
+        break
+    else:
+        Average_list.append(num)
+
+average_sum = sum(Average_list)
+num_of_term = len(Average_list)
+average = average_sum/num_of_term
+
+print(average)
+
