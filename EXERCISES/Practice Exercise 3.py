@@ -50,3 +50,24 @@ average = average_sum/num_of_term
 
 print(average)
 
+# ITEM 3: Negatives, Zeros, and Positives
+all_numbers = []
+zero = []
+nega = []
+pos = []
+while True:
+    number = input("Please input your number:")
+    if number == "":
+        break
+    else:
+        all_numbers.append(int(number))
+
+for number in all_numbers:
+    if number > 0:
+        pos.append(number)
+    elif number < 0:
+        nega.append(number)
+    else:
+        zero.append(number)
+
+print(nega, zero, pos)

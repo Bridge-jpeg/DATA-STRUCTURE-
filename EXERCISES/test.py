@@ -39,3 +39,29 @@ while my_list:
             print(leaf)
             print(my_list)
 
+all_numbers = []
+zero = []
+nega = []
+pos = []
+while True:
+    number = input("Please input your number:")
+    if number == "":
+        break
+    else:
+        all_numbers.append(int(number))
+
+for number in all_numbers:
+    if number > 0:
+        pos.append(number)
+    elif number < 0:
+        nega.append(number)
+    else:
+        zero.append(number)
+
+nega.sort()
+pos.sort()
+zero.sort()
+
+print(nega, end=" ")
+print(zero, end=" ")
+print(pos)
