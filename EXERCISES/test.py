@@ -27,41 +27,36 @@ index = -1
 #         index = i
 #         element_to_find = ++1
 # cleared_list = len(my_list) != 0
-my_list = [0.1, 0.0, 0.2, 2.4, 2.7, 4.2]
-leaf = []
-element_to_find = 1
-while my_list:  
-    for element in my_list:
-        if element < element_to_find:
-            leaf.append(element)
-            element_to_find +=1
-            element = my_list.pop(0)
-            print(leaf)
-            print(my_list)
 
-all_numbers = []
-zero = []
-nega = []
-pos = []
-while True:
-    number = input("Please input your number:")
-    if number == "":
-        break
-    else:
-        all_numbers.append(int(number))
+# my_list = [0.1, 0.0, 0.2, 2.4, 2.7, 4.2]
+# leaf = []
+# element_to_find = 1
+# while my_list:  
+#     for element in my_list:
+#         if element < element_to_find:
+#             leaf.append(element)
+#             element_to_find +=1
+#             element = my_list.pop(0)
+#             print(leaf)
+#             print(my_list)
 
-for number in all_numbers:
-    if number > 0:
-        pos.append(number)
-    elif number < 0:
-        nega.append(number)
-    else:
-        zero.append(number)
+# all_numbers = []
+# while True:
+#     number = input("Please input your number:")
+#     if number == "":
+#         break
+#     else:
+#         all_numbers.append(int(number))
 
-nega.sort()
-pos.sort()
-zero.sort()
+# all_numbers.sort()
+# print(*all_numbers, sep = '\n')
+height = input("Please input your height (include if its inches or meter): ")
+weight = input("Please input your weight (include if its pounds or kilogram): ")
 
-print(nega, end=" ")
-print(zero, end=" ")
-print(pos)
+# validation_height1 = height.find("in", "inches").lower()
+# validation_height2 = height.find("m", "meter").lower()
+# validation_weight1 = weight.find("kg", "kilogram").lower()
+# validation_weight2 = weight.find("lb", "pounds").lower()
+
+# gumamit ng "in"
+

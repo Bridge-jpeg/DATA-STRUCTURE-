@@ -5,7 +5,7 @@
 #ID number: 2024-140342
 X = 140342
 item_number = int(X%4)
-print(f'Your item number is {item_number}.')
+print(f'Your Item Number is {item_number}.')
 
 def check_password(user_password):
     Pass_Value = False
@@ -32,7 +32,10 @@ check_password(user_password)
 #https://www.w3schools.com/python/ref_string_isdigit.asp
 
 # ITEM 0: Body Mass Index (BMI) 
+height = input("Please input your height (include if its inches or meter): ")
+weight = input("Please input your weight (include if its pounds or kilogram): ")
 
+validation_height = height.find("in", "inches")
 
 
 # ITEM 1: Average 
@@ -52,9 +55,6 @@ print(average)
 
 # ITEM 3: Negatives, Zeros, and Positives
 all_numbers = []
-zero = []
-nega = []
-pos = []
 while True:
     number = input("Please input your number:")
     if number == "":
@@ -62,12 +62,5 @@ while True:
     else:
         all_numbers.append(int(number))
 
-for number in all_numbers:
-    if number > 0:
-        pos.append(number)
-    elif number < 0:
-        nega.append(number)
-    else:
-        zero.append(number)
-
-print(nega, zero, pos)
+all_numbers.sort()
+print(*all_numbers, sep = '\n')
