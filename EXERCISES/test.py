@@ -50,13 +50,32 @@ index = -1
 
 # all_numbers.sort()
 # print(*all_numbers, sep = '\n')
+
 height = input("Please input your height (include if its inches or meter): ")
 weight = input("Please input your weight (include if its pounds or kilogram): ")
 
-# validation_height1 = height.find("in", "inches").lower()
-# validation_height2 = height.find("m", "meter").lower()
-# validation_weight1 = weight.find("kg", "kilogram").lower()
-# validation_weight2 = weight.find("lb", "pounds").lower()
+height_value = 0
+weight_value = 0
+for c in height:
+    if c.isdigit():
+        c = int(c)
+        height_value = height_value + c
 
-# gumamit ng "in"
+for c in weight:
+    if c.isdigit():
+        c = int(c)
+        weight_value = weight_value + c
+
+formula1 = (weight_value / height_value * height_value) * 703
+formula2 = weight_value / height_value * height_value
+
+BMI1 = "in" or "inches" in height and "lb" or "pounds" in weight
+BMI2 = "m" or "meter" in height and "kg" or "kilogram" in weight
+if BMI1:
+    print(f'Your BMI is {round(formula1)}')
+elif BMI2:
+    print(f'Your BMI is {round(formula2)}')
+else:
+    print("Cannot evaluate your BMI")
+    
 
