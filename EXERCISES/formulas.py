@@ -12,7 +12,11 @@ def sample_median(int_data_list):
         odd_median_index = int(odd_middle_median)
         odd_median = int_data_list[odd_median_index]
         print(f'Median: {odd_median}')
-
+def sample_mode(int_data_list):
+    duplicate_number = []
+    unique_number = []
+    
+    pass
 def sample_mean(int_data_list, n_terms):
     sum_of_data = sum(int_data_list)
     global mean

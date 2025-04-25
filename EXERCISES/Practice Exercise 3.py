@@ -37,18 +37,14 @@ weight = input("Please input your weight (include if its pounds or kilogram): ")
 
 height_value = 0
 weight_value = 0
-
 for c in height:
     if c.isdigit():
         c = int(c)
         height_value += c
-
 for c in weight:
     if c.isdigit():
         c = int(c)
         weight_value += c
-
-print(weight)
 
 weight_check1_BMI1 = "lb" in weight
 weight_check2_BMI1 = "pounds" in weight
@@ -66,10 +62,8 @@ formula1 = ((weight_value) / (height_value * height_value)) * 703
 formula2 = (weight_value) / (height_value * height_value)
 
 if BMI1:
-    print(weight_value)
     print(f'Your BMI is {round(formula1, 2)}')
 elif BMI2:
-    print(height_value)
     print(f'Your BMI is {round(formula2, 2)}')
 else:
     print("Cannot evaluate your BMI")
