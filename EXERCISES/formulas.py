@@ -14,16 +14,17 @@ def sample_median(int_data_list):
         print(f'Median: {odd_median}')
 def sample_mode(int_data_list):
     duplicate_number = []
-    unique_number = []
-    
-    pass
+    # unique_number = []
+    for data in int_data_list:     
+        if data not in duplicate_number:
+            duplicate_number.append(data)
+    print(f"Mode: {duplicate_number}")
 def sample_mean(int_data_list, n_terms):
     sum_of_data = sum(int_data_list)
     global mean
     mean = (sum_of_data)/n_terms
     print(f'Mean: {round(mean, 4)}')
-
-def trimmed_mean(trimmed_input, int_data_list, n_terms):
+def trimmed_mean(trimmed_input, int_data_list):
     trimmed_decimal = trimmed_input/100
     formula_for_trimmed = int((trimmed_decimal)*(len(int_data_list)))
     trimmed_datalist = int_data_list[formula_for_trimmed: -formula_for_trimmed]
@@ -31,11 +32,9 @@ def trimmed_mean(trimmed_input, int_data_list, n_terms):
     sum_of_trimmed_data = sum(trimmed_datalist)
     trimmed_formula = (sum_of_trimmed_data)/trimmed_n_terms
     print(f'Trimmed Data list: {trimmed_datalist} \nTrimmed Mean: {trimmed_formula}')
-
 def sample_range(int_data_list):
     sample_range = abs(int_data_list[0] - int_data_list[-1])
     print(f'Range: {sample_range}')
-
 def sample_variance_and_standard_deviation(int_data_list, n_terms):
     variance_n_terms = n_terms - 1
     variance_sum_list = []
@@ -47,7 +46,6 @@ def sample_variance_and_standard_deviation(int_data_list, n_terms):
     standard_deviation = round((variance)**(0.5), 4)
     print(f'Sample Variance: {variance}')
     print(f'Standard Deviation: {standard_deviation}')
-
 def stem_and_leaf(int_data_list):
     stem = [0.1, 0.2, 1.0, 1.2, 2.0, 2.2]
     leaf = []
@@ -71,6 +69,7 @@ trimmed_input = float(input("Input trim: "))
 print(f'The original data list: {int_data_list}')
 sample_mean(int_data_list, n_terms)
 sample_median(int_data_list)
+sample_mode(int_data_list)
 sample_range(int_data_list)
-trimmed_mean(trimmed_input, int_data_list, n_terms)
+trimmed_mean(trimmed_input, int_data_list)
 sample_variance_and_standard_deviation(int_data_list, n_terms)
