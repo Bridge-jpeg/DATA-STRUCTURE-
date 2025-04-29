@@ -1,24 +1,50 @@
 def sample_median(int_data_list):
     middle_median = len(int_data_list)/2
-    value_of_numbers = len(int_data_list) & 2 == 0 
+    value_of_numbers = len(int_data_list) % 2 == 0
     if value_of_numbers:
-        even_middle_median = int(middle_median - 1)
-        even_median1 = int_data_list[even_middle_median + 1]
+        even_middle_median = int(middle_median)
+        even_median1 = int_data_list[even_middle_median - 1]
         even_median2 = int_data_list[even_middle_median]
         even_median = (even_median1 + even_median2)/2
-        print(f'Median: {even_median}')
+        even_median_index = int(even_median)
+        even_quartile1_list = int_data_list[0 : even_median_index - 1] # quartile 1 (even)
+        middle_even_quartile1 = int(len(even_quartile1_list)/2)
+        even_quartile1_index1 = even_quartile1_list[middle_even_quartile1 - 1]
+        even_quartile1_index2 = even_quartile1_list[middle_even_quartile1]
+        even_quartile1 = (even_quartile1_index1 + even_quartile1_index2) / 2
+        even_quartile3_list = int_data_list[even_median_index + 1:]
+        middle_even_quartile3 = int(len(even_quartile3_list)/2)
+        even_quartile3_index1 = even_quartile3_list[middle_even_quartile3- 1]
+        even_quartile3_index2 = even_quartile3_list[middle_even_quartile3]
+        even_quartile3 = (even_quartile3_index1 + even_quartile3_index2) / 2
+        print(f'even Median: {even_median}')
+        print(f"Quartile 1 (Q1): {even_quartile1}")
+        print(f"Quartile 3 (Q3): {even_quartile3}")
+
     else: 
         odd_middle_median = int(middle_median - 0.5)
-        odd_median_index = int(odd_middle_median)
-        odd_median = int_data_list[odd_median_index]
-        print(f'Median: {odd_median}')
+        odd_median = int_data_list[odd_middle_median]
+        odd_quartile1_list = int_data_list[0 : odd_median -1]
+        odd_quartile1_median = len(odd_quartile1_list)/2
+        odd_quartile1_index = int(odd_quartile1_median - 0.5)
+        odd_quartile1 = odd_quartile1_list[odd_quartile1_index]
+        odd_quartile3_list = int_data_list[odd_median:]
+        odd_quartile3_median = len(odd_quartile3_list)/2
+        odd_quartile3_index = int(odd_quartile3_median - 0.5)
+        odd_quartile3 = odd_quartile3_list[odd_quartile3_index]
+        print(f'odd Median: {odd_median}')
+        print(f"Quartile 1 (Q1): {odd_quartile1}")
+        print(f"Quartile 3 (Q3): {odd_quartile3}")
+
 def sample_mode(int_data_list):
-    duplicate_number = []
-    # unique_number = []
+    duplicated_number = []
+    unique_number = []
     for data in int_data_list:     
-        if data not in duplicate_number:
-            duplicate_number.append(data)
-    print(f"Mode: {duplicate_number}")
+        if data not in unique_number:
+            unique_number.append(data)
+        else:
+            duplicated_number.append(data)
+    print(f"Mode: {unique_number}")
 def sample_mean(int_data_list, n_terms):
     sum_of_data = sum(int_data_list)
     global mean
@@ -26,7 +52,7 @@ def sample_mean(int_data_list, n_terms):
     print(f'Mean: {round(mean, 4)}')
 def trimmed_mean(trimmed_input, int_data_list):
     trimmed_decimal = trimmed_input/100
-    formula_for_trimmed = int((trimmed_decimal)*(len(int_data_list)))
+    formula_for_trimmed = int((trimmed_decimal)*(len(int_data_list) + 1))
     trimmed_datalist = int_data_list[formula_for_trimmed: -formula_for_trimmed]
     trimmed_n_terms = len(trimmed_datalist)
     sum_of_trimmed_data = sum(trimmed_datalist)
