@@ -35,7 +35,6 @@ def sample_median(int_data_list):
         print(f'odd Median: {odd_median}')
         print(f"Quartile 1 (Q1): {odd_quartile1}")
         print(f"Quartile 3 (Q3): {odd_quartile3}")
-
 def sample_mode(int_data_list):
     duplicated_number = []
     unique_number = []
