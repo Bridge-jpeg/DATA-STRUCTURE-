@@ -17,9 +17,11 @@ def sample_median(int_data_list):
         even_quartile3_index1 = even_quartile3_list[middle_even_quartile3- 1]
         even_quartile3_index2 = even_quartile3_list[middle_even_quartile3]
         even_quartile3 = (even_quartile3_index1 + even_quartile3_index2) / 2
-        print(f'even Median: {even_median}')
+        odd_IQR = even_quartile3 - even_quartile1
+        print(f'Median: {even_median}')
         print(f"Quartile 1 (Q1): {even_quartile1}")
         print(f"Quartile 3 (Q3): {even_quartile3}")
+        print(f'IQR: {odd_IQR}')
 
     else: 
         odd_middle_median = int(middle_median - 0.5)
@@ -32,9 +34,11 @@ def sample_median(int_data_list):
         odd_quartile3_median = len(odd_quartile3_list)/2
         odd_quartile3_index = int(odd_quartile3_median - 0.5)
         odd_quartile3 = odd_quartile3_list[odd_quartile3_index]
-        print(f'odd Median: {odd_median}')
+        even_IQR = odd_quartile3 - odd_quartile1
+        print(f'Median: {odd_median}')
         print(f"Quartile 1 (Q1): {odd_quartile1}")
         print(f"Quartile 3 (Q3): {odd_quartile3}")
+        print(f'IQR: {even_IQR}')
 def sample_mode(int_data_list):
     duplicated_number = []
     unique_number = []
@@ -76,7 +80,6 @@ def stem_and_leaf(int_data_list):
     leaf = []
     print()
     pass
-
 data_list = []
 int_data_list = []
 print("Input the all the given data and leave blank at the end.")
@@ -91,6 +94,7 @@ for item in data_list:
 int_data_list.sort()
 n_terms = len(int_data_list)
 trimmed_input = float(input("Input trim: "))
+print("--------------------------")
 print(f'The original data list: {int_data_list}')
 sample_mean(int_data_list, n_terms)
 sample_median(int_data_list)
