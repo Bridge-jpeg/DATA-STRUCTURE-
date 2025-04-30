@@ -17,11 +17,11 @@ def sample_median(int_data_list):
         even_quartile3_index1 = even_quartile3_list[middle_even_quartile3- 1]
         even_quartile3_index2 = even_quartile3_list[middle_even_quartile3]
         even_quartile3 = (even_quartile3_index1 + even_quartile3_index2) / 2
-        odd_IQR = even_quartile3 - even_quartile1
+        even_IQR = even_quartile3 - even_quartile1
         print(f'Median: {even_median}')
         print(f"Quartile 1 (Q1): {even_quartile1}")
         print(f"Quartile 3 (Q3): {even_quartile3}")
-        print(f'IQR: {odd_IQR}')
+        print(f'IQR: {even_IQR}')
 
     else: 
         odd_middle_median = int(middle_median - 0.5)
@@ -34,11 +34,11 @@ def sample_median(int_data_list):
         odd_quartile3_median = len(odd_quartile3_list)/2
         odd_quartile3_index = int(odd_quartile3_median - 0.5)
         odd_quartile3 = odd_quartile3_list[odd_quartile3_index]
-        even_IQR = odd_quartile3 - odd_quartile1
+        odd_IQR = odd_quartile3 - odd_quartile1
         print(f'Median: {odd_median}')
         print(f"Quartile 1 (Q1): {odd_quartile1}")
         print(f"Quartile 3 (Q3): {odd_quartile3}")
-        print(f'IQR: {even_IQR}')
+        print(f'IQR: {odd_IQR}')
 def sample_mode(int_data_list):
     duplicated_number = []
     unique_number = []
