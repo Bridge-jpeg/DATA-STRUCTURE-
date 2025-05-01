@@ -7,12 +7,12 @@ def sample_median(int_data_list):
         even_median2 = int_data_list[even_middle_median]
         even_median = (even_median1 + even_median2)/2
         even_median_index = int(even_median)
-        even_quartile1_list = int_data_list[0 : even_median_index - 1] # quartile 1 (even)
+        even_quartile1_list = int_data_list[0 : even_median_index - 1]      # quartile 1 (even)
         middle_even_quartile1 = int(len(even_quartile1_list)/2)
         even_quartile1_index1 = even_quartile1_list[middle_even_quartile1 - 1]
         even_quartile1_index2 = even_quartile1_list[middle_even_quartile1]
         even_quartile1 = (even_quartile1_index1 + even_quartile1_index2) / 2
-        even_quartile3_list = int_data_list[even_median_index + 1:]
+        even_quartile3_list = int_data_list[even_median_index + 1:]     # quartile 3 (even)
         middle_even_quartile3 = int(len(even_quartile3_list)/2)
         even_quartile3_index1 = even_quartile3_list[middle_even_quartile3- 1]
         even_quartile3_index2 = even_quartile3_list[middle_even_quartile3]
@@ -26,11 +26,11 @@ def sample_median(int_data_list):
     else: 
         odd_middle_median = int(middle_median - 0.5)
         odd_median = int_data_list[odd_middle_median]
-        odd_quartile1_list = int_data_list[0 : odd_median -1]
+        odd_quartile1_list = int_data_list[0 : odd_median -1]   # quartile 1 (odd)
         odd_quartile1_median = len(odd_quartile1_list)/2
         odd_quartile1_index = int(odd_quartile1_median - 0.5)
         odd_quartile1 = odd_quartile1_list[odd_quartile1_index]
-        odd_quartile3_list = int_data_list[odd_median:]
+        odd_quartile3_list = int_data_list[odd_median:]     # quartile 3 (odd)
         odd_quartile3_median = len(odd_quartile3_list)/2
         odd_quartile3_index = int(odd_quartile3_median - 0.5)
         odd_quartile3 = odd_quartile3_list[odd_quartile3_index]
@@ -62,7 +62,7 @@ def trimmed_mean(trimmed_input, int_data_list):
     trimmed_formula = (sum_of_trimmed_data)/trimmed_n_terms
     print(f'Trimmed Data list: {trimmed_datalist} \nTrimmed Mean: {trimmed_formula}')
 def sample_range(int_data_list):
-    sample_range = abs(int_data_list[0] - int_data_list[-1])
+    sample_range = abs(int_data_list[-1] - int_data_list[0])
     print(f'Range: {sample_range}')
 def sample_variance_and_standard_deviation(int_data_list, n_terms):
     variance_n_terms = n_terms - 1
