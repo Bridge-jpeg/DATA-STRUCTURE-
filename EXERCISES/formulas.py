@@ -7,11 +7,13 @@ def sample_median(int_data_list):
         even_median2 = int_data_list[even_middle_median]
         even_median = (even_median1 + even_median2)/2
         even_median_index = int(even_median)
+
         even_quartile1_list = int_data_list[0 : even_median_index - 1]      # quartile 1 (even)
         middle_even_quartile1 = int(len(even_quartile1_list)/2)
         even_quartile1_index1 = even_quartile1_list[middle_even_quartile1 - 1]
         even_quartile1_index2 = even_quartile1_list[middle_even_quartile1]
         even_quartile1 = (even_quartile1_index1 + even_quartile1_index2) / 2
+
         even_quartile3_list = int_data_list[even_median_index + 1:]     # quartile 3 (even)
         middle_even_quartile3 = int(len(even_quartile3_list)/2)
         even_quartile3_index1 = even_quartile3_list[middle_even_quartile3- 1]
@@ -26,10 +28,12 @@ def sample_median(int_data_list):
     else: 
         odd_middle_median = int(middle_median - 0.5)
         odd_median = int_data_list[odd_middle_median]
+
         odd_quartile1_list = int_data_list[0 : odd_median -1]   # quartile 1 (odd)
         odd_quartile1_median = len(odd_quartile1_list)/2
         odd_quartile1_index = int(odd_quartile1_median - 0.5)
         odd_quartile1 = odd_quartile1_list[odd_quartile1_index]
+        
         odd_quartile3_list = int_data_list[odd_median:]     # quartile 3 (odd)
         odd_quartile3_median = len(odd_quartile3_list)/2
         odd_quartile3_index = int(odd_quartile3_median - 0.5)
