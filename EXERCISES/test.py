@@ -86,4 +86,3 @@ else:
     print(f'odd Median: {odd_median}')
     print(f"Quartile 1 (Q1): {odd_quartile1}")
     print(f"Quartile 3 (Q3): {odd_quartile3}")
-

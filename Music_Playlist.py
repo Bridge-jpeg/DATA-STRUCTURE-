@@ -27,7 +27,7 @@ class PlayList:
         if song != None:
             print(f"Now playing: {song.title}")
         else:
-            print(f"Song not found: {song}")
+            print(f"Song not found ")
 
     def display_playlist(self):
         song = self.head
@@ -37,6 +37,7 @@ class PlayList:
             else:
                 print("Playlist is empty")
             song = song.next
+            
 lynds = PlayList()
 lynds.add_song("Multo")
 lynds.add_song("Enchanted")
@@ -44,7 +45,7 @@ lynds.add_song("Iris")
 lynds.add_song("Marilag")
 lynds.add_song("Let Her Go")
 
-lynds.play_song("iris")
+lynds.play_song("Iris")
 lynds.play_song("You'll be safe here")
 
 lynds.display_playlist()
