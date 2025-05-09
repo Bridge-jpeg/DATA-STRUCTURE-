@@ -21,22 +21,22 @@ class PlayList:
         add_SongNode.next = new_SongNode 
     
     def play_song(self, title):
-        song = title
-        while song != None and song != song.data:
-            song = song.link
+        song = self.head
+        while song != None and title != song.title:
+            song = song.next
         if song != None:
-            print(f"Now playing: {song.data} ")
+            print(f"Now playing: {song.title}")
         else:
-            print(f"Song not found: {song.data} ")
+            print(f"Song not found: {song}")
 
     def display_playlist(self):
         song = self.head
         while song != None:
             if song != None:
-                print(song.data, end = ">")
+                print(song.title, end = ">")
             else:
                 print("Playlist is empty")
-
+            song = song.next
 lynds = PlayList()
 lynds.add_song("Multo")
 lynds.add_song("Enchanted")
