@@ -28,23 +28,22 @@ class PlayList:
         if song != None:
             print(f"Now playing: {song.title}")     # plays the song if exist 
         else:
-            print(f"Song not found ")       # returns this print statement if the song does not exist
+            print(f"Song not found: {title} ")       # returns this print statement if the song does not exist
 
     def display_playlist(self):     # displays all the songs in the playlist
         song = self.head
-        print("Your Playlist: ")
-        while song != None:     # checks all the songs
+        if song == None: 
+            print("Playlist is empty")      # returns this print statement if the playlsit is empty
+        while song != None: 
             if song != None:
                 print(f'> {song.title}')        # prints the songs 
-            else:
-                print("Playlist is empty")      # returns this print statement if the playlsit is empty
-            song = song.next
+                song = song.next
 
 # Main method           
 lynds = PlayList()      # instance of the class Playlist()
 # Songs in the Playlist
 # Adds songs using the method add_song()
-lynds.add_song("Multo")     
+lynds.add_song("Multo")
 lynds.add_song("Enchanted")
 lynds.add_song("Iris")
 lynds.add_song("Marilag")
